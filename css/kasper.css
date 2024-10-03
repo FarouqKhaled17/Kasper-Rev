@@ -1,0 +1,237 @@
+/* Start Var */
+:root {
+  --main-color: #19c8fa;
+  --transparent-color: rgba(15 116 143/70%);
+}
+/* End var */
+
+/* Start Global Rules */
+* {
+  -web-kit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #222;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+cursor {
+  cursor: pointer;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 72px;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+/* End Global Rules */
+
+/*! Start Header */
+header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+header .container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.container img {
+  height: 40px;
+}
+
+header nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li a {
+  color: #ffffff;
+  padding: 30px 15px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+  z-index: 3;
+  position: relative;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: var(--main-color);
+  border-bottom: var(--main-color) 2px solid;
+}
+
+header .form {
+  width: 40px;
+  height: 30px;
+  color: white;
+  border-left: white solid 2px;
+  margin-left: 10px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+header .form:hover {
+  color: var(--main-color);
+}
+
+header .form i {
+  position: absolute;
+  top: 20%;
+  margin-left: 10px;
+  translate: translateY(-50%);
+}
+
+header nav .hamburger-menu {
+  color: white;
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  header nav .hamburger-menu {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  header nav ul {
+    display: none;
+  }
+
+  header .form {
+    display: none;
+  }
+
+  header nav .hamburger-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: #222;
+    left: 0;
+  }
+
+  header nav .hamburger-menu:hover + ul li a {
+    padding: 15px;
+  }
+}
+/*! End Header */
+
+/*? Start Landing */
+.landing {
+  min-height: 100vh;
+  background-color: #1b1a1a;
+  background: url("../images/landing.jpg") no-repeat center center/cover;
+  background-size: cover;
+  position: relative;
+}
+
+.landing .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.landing .text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50%;
+  color: white;
+  background-color: var(--transparent-color);
+  padding: 50px;
+  transform: translateY(-50%);
+  font-size: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.landing .text .content {
+  max-width: 500px;
+}
+
+.landing .text .btn {
+  color: rgba(255, 255, 255, 0.629);
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.landing .text .btn:hover {
+  color: var(--main-color);
+}
+
+.landing .text .content p {
+  line-height: 1.5;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #19c8fa;
+}
+
+/*? End Landing */
